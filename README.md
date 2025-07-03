@@ -1,6 +1,6 @@
 # Natural Language Syntax Highlighting
 
-**This is a fork of the original Natural Language Syntax Highlighting plugin, adapted to work with German text as well as English.**
+**This is a fork of the original Natural Language Syntax Highlighting plugin, adapted to work with German text instead of English.**
 
 This version uses the [de-compromise](https://github.com/nlp-compromise/de-compromise) library for German language support, instead of the original [compromise](https://github.com/spencermountain/compromise) library for English.
 
