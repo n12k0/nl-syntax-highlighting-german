@@ -29,3 +29,7 @@ Any contributions and PRs are welcome.
 
 Thanks to [artisticat](https://github.com/artisticat1) for the original plugin, this is simply
 a fork to add German language support.
+
+---
+
+If you want to fully emulate the iA Writer experience while writing in German in Obsidian, check out my other fork: [Cut the Fluff German](https://github.com/n12k0/obsidian-cut-the-fluff-german). This plugin acts as an editor, helping you identify filler words, redundancies, clichés, weak qualifiers, jargon, weasel words, and unnecessary complexity in your writing.
