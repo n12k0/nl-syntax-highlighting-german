@@ -6,11 +6,11 @@ This version uses the [de-compromise](https://github.com/nlp-compromise/de-compr
 
 A plugin for [Obsidian.md](https://obsidian.md/) that highlights adjectives, nouns, adverbs, verbs, articles, and conjunctions in the editor. Inspired by iA Writer.
 
-![screenshot 1](img/nl-syntax-hl-german.png)
+![screenshot 1](img/nl-syntax-hl-german3.png)
 
 Colours can be customised in the plugin settings.
 
-![screenshot 2](img/nl-syntax-hl-german2.png)
+![screenshot 2](img/nl-syntax-hl-german4.png)
 
 The highlighting can be toggled on or off at any time via the command **Natural Language Syntax Highlighting: Toggle on/off** in the Command palette.
 
