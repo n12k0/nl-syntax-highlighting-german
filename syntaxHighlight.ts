@@ -1,6 +1,6 @@
 import { EditorView, ViewUpdate, Decoration, DecorationSet, ViewPlugin } from "@codemirror/view";
-import nlp from "compromise";
-import CompromiseView from "compromise/types/view/one";
+// @ts-ignore
+import nlp from "de-compromise";
 import NLSyntaxHighlightPlugin from "main";
 
 
@@ -36,42 +36,39 @@ function getDecosOnLine(view: EditorView, lineNumber: number) {
     const docText = view.state.sliceDoc(line.from, line.to);
 
     const doc = nlp(docText);
-    const wordsToHighlight: { [partOfSpeech: string]: CompromiseView }  = {};
+    const wordsToHighlight: { [partOfSpeech: string]: any }  = {};
 
-    const adjectives = doc.adjectives();
+    const adjectives = doc.match("#Adjective");
     const nouns = doc.match("#Noun").not("#Pronoun").not("#Possessive");
-    const adverbs = doc.adverbs();
+    const adverbs = doc.match("#Adverb");
     const verbs = doc.match("#Verb");
-    const conjunctions = doc.conjunctions();
+    const conjunctions = doc.match("#Conjunction");
+    const articles = doc.match("#Determiner"); // Added for German articles
+    console.log('Detected articles:', articles.out("array"));
 
     wordsToHighlight["adjective"] = adjectives;
     wordsToHighlight["noun"] = nouns;
     wordsToHighlight["adverb"] = adverbs;
     wordsToHighlight["verb"] = verbs;
     wordsToHighlight["conjunction"] = conjunctions;
+    wordsToHighlight["article"] = articles; // Added for German articles
 
     // @ts-ignore
     const plugin:NLSyntaxHighlightPlugin = window.app.plugins.plugins['nl-syntax-highlighting'];
 
-
     for (const partOfSpeech of Object.keys(wordsToHighlight)) {
         const words = wordsToHighlight[partOfSpeech];
-        // console.log(words);
-
         // Use .out("offset") to get the word's start and end indices in the document
         for (const word of words.out("offset")) {
-
             const offset = word.offset;
             const start = offset.start;
-
             // Use .terms[0].offset to ignore punctuation
             const end = start + word.terms[0].offset.length;
-
             if (start === end) continue;
-
-
-            const truePartOfSpeech = (word.text in plugin.wordsToOverrideDict) ? plugin.wordsToOverrideDict[word.text] : partOfSpeech;
-
+            let truePartOfSpeech = partOfSpeech;
+            if (plugin && plugin.wordsToOverrideDict && (word.text in plugin.wordsToOverrideDict)) {
+                truePartOfSpeech = plugin.wordsToOverrideDict[word.text];
+            }
             widgets.push({partOfSpeech: truePartOfSpeech, start: start, end: end})
         }
     }

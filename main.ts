@@ -4,7 +4,7 @@ import { NLSyntaxHighlightPluginSettings, DEFAULT_SETTINGS, NLSyntaxHighlightSet
 import { Extension } from '@codemirror/state';
 
 
-export default class NLSyntaxHighlightPlugin extends Plugin {
+export default class NLSyntaxHighlightGermanPlugin extends Plugin {
 	settings: NLSyntaxHighlightPluginSettings;
 	extensions: Extension[];
 	wordsToOverrideDict: {[word: string]: string};
@@ -63,9 +63,9 @@ export default class NLSyntaxHighlightPlugin extends Plugin {
 	convertSettingsToStyle(settings: NLSyntaxHighlightPluginSettings) {
 		let style = "";
 
-		const partsOfSpeech = ["adjective", "noun", "adverb", "verb", "conjunction"];
-		const enabled = [settings.adjectiveEnabled, settings.nounEnabled, settings.adverbEnabled, settings.verbEnabled, settings.conjunctionEnabled];
-		const colors = [settings.adjectiveColor, settings.nounColor, settings.adverbColor, settings.verbColor, settings.conjunctionColor];
+		const partsOfSpeech = ["adjective", "noun", "adverb", "verb", "conjunction", "article"]; // Added article
+		const enabled = [settings.adjectiveEnabled, settings.nounEnabled, settings.adverbEnabled, settings.verbEnabled, settings.conjunctionEnabled, settings.articleEnabled]; // Added article
+		const colors = [settings.adjectiveColor, settings.nounColor, settings.adverbColor, settings.verbColor, settings.conjunctionColor, settings.articleColor]; // Added article
 
 		for (let i = 0; i < partsOfSpeech.length; i++) {
 			if (enabled[i]) {

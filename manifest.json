@@ -1,10 +1,10 @@
 {
-	"id": "nl-syntax-highlighting",
-	"name": "Natural Language Syntax Highlighting",
+	"id": "nl-syntax-highlighting-german",
+	"name": "Natural Language Syntax Highlighting (German)",
 	"version": "0.4.0",
 	"minAppVersion": "0.15.0",
-	"description": "Highlight adjectives, nouns, adverbs, verbs, and conjunctions in the editor",
-	"author": "artisticat",
+	"description": "Highlight adjectives, nouns, adverbs, verbs, conjunctions, and articles in German in the editor",
+	"author": "n12k0 (fork from artisticat)",
 	"authorUrl": "https://github.com/artisticat1",
 	"fundingUrl": "https://ko-fi.com/artisticat",
 	"isDesktopOnly": false

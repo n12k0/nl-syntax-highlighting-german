@@ -1,7 +1,7 @@
 {
-	"name": "obsidian-nl-syntax-highlight",
+	"name": "obsidian-nl-syntax-highlight-german",
 	"version": "0.4.0",
-	"description": "Highlight adjectives, nouns, adverbs, verbs, and conjunctions in the editor",
+	"description": "Highlight adjectives, nouns, adverbs, verbs, conjunctions, and articles in German in the editor",
 	"main": "main.js",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",
@@ -12,16 +12,19 @@
 	"author": "",
 	"license": "MIT",
 	"devDependencies": {
+		"@codemirror/state": "^6.0.0",
+		"@codemirror/view": "^6.0.0",
 		"@types/node": "^16.11.6",
 		"@typescript-eslint/eslint-plugin": "5.29.0",
 		"@typescript-eslint/parser": "5.29.0",
-		"@codemirror/state": "^6.0.0",
-		"@codemirror/view": "^6.0.0",
 		"builtin-modules": "3.3.0",
+		"compromise": "14.8.1",
 		"esbuild": "0.14.47",
 		"obsidian": "latest",
 		"tslib": "2.4.0",
-		"typescript": "4.7.4",
-		"compromise": "14.8.1"
+		"typescript": "4.7.4"
+	},
+	"dependencies": {
+		"de-compromise": "^0.0.10"
 	}
 }
