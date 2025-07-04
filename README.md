@@ -16,7 +16,7 @@ The highlighting can be toggled on or off at any time via the command **Natural 
 
 ## Installation
 
-1. Download the latest release assets from the [Releases page](https://github.com/your-username/nl-syntax-highlighting/releases).
+1. Download the latest release assets from the [Releases page](https://github.com/n12k0/nl-syntax-highlighting-german/releases).
 2. Unzip the downloaded folder.
 3. Move the unzipped folder into your vault's `.obsidian/plugins` directory.
 4. Restart Obsidian or enable the plugin from the Obsidian settings under "Community plugins".
