@@ -251,7 +251,7 @@ export class NLSyntaxHighlightSettingTab extends PluginSettingTab {
 
 			new Setting(containerEl)
 			.setName('CSS-Klasse für Syntaxhervorhebung')
-			.setDesc('Wenn angegeben, wird die Syntaxhervorhebung nur auf Notizen angewendet, deren "cssclass"-Eigenschaft im YAML gleich dem angegebenen Wert ist.')
+			.setDesc('Wenn angegeben, wird die Syntaxhervorhebung nur auf Notizen angewendet, deren "cssclasses"-Eigenschaft im YAML den angegebenen Wert enthält.')
 			.addText(text => text
 				.setValue(this.plugin.settings.classToApplyHighlightingTo)
 				.onChange(async (value) => {

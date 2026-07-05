@@ -54,7 +54,7 @@ function getDecosOnLine(view: EditorView, lineNumber: number) {
     wordsToHighlight["article"] = articles; // Added for German articles
 
     // @ts-ignore
-    const plugin:NLSyntaxHighlightPlugin = window.app.plugins.plugins['nl-syntax-highlighting'];
+    const plugin:NLSyntaxHighlightPlugin = window.app.plugins.plugins['nl-syntax-highlighting-german'];
 
     for (const partOfSpeech of Object.keys(wordsToHighlight)) {
         const words = wordsToHighlight[partOfSpeech];
